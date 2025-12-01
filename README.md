@@ -1,149 +1,73 @@
-# snippet-api
+Snippet API (Project 2)
+Live Deployment
 
-Snippet API
+Live:
 
-A simple REST API for storing, retrieving, and managing code snippets.
-Built with Node.js, Express, and MongoDB (Mongoose).
+Running Locally
+Prerequisites
 
-Supports code snippets like:
+You must have Node.js (version 18 or later) installed.
 
-{
-  "title": "Hello World",
-  "language": "python",
-  "code": "print('Hello World')"
-}
+Setup Instructions
 
-Installation
-
-Clone the repository and install dependencies:
+Install dependencies defined in package.json:
 
 npm install
 
-Environment Setup
 
-Create a .env file in the project root:
+Start the server – opens on http://localhost:3000/ by default (or the PORT from .env):
+
+npm start
+
+
+Ensure your .env is configured with:
 
 MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/snippets
 PORT=3000
 
+API Endpoints
+Snippets Collection
 
-Important:
-Make sure <cluster> matches your MongoDB Atlas cluster name.
-Example:
+GET /api/snippets
+Retrieves all code snippets. Optional query parameter:
+?lang= (filter by programming language)
 
-cluster0.x7p9n
+GET /api/snippets/:id
+Retrieves a snippet by its MongoDB _id.
 
-
-If the connection string is wrong, you will see:
-
-DB Connection Error: ENOTFOUND _mongodb._tcp.cluster.mongodb.net
-
-Running the Server
-node server.js
-
-
-Expected output:
-
-Server running on port 3000
-MongoDB connected
-
-Testing the API
-
-Different shells require different quoting rules.
-Below are correct commands for:
-
-Windows PowerShell
-
-Windows CMD
-
-macOS / Linux
-
-1️⃣ Create a Snippet (POST)
-Windows PowerShell
-curl -X POST http://localhost:3000/api/snippets `
-  -H "Content-Type: application/json" `
-  -d "{\"title\": \"Hello World\", \"language\": \"python\", \"code\": \"print('Hello World')\"}"
-
-Windows CMD
-curl -X POST http://localhost:3000/api/snippets -H "Content-Type: application/json" -d "{\"title\":\"Hello World\",\"language\":\"python\",\"code\":\"print('Hello World')\"}"
-
-macOS / Linux
-curl -X POST http://localhost:3000/api/snippets \
-  -H "Content-Type: application/json" \
-  -d '{"title": "Hello World", "language": "python", "code": "print(\"Hello World\")"}'
-
-2️⃣ Get All Snippets (GET)
-All Platforms
-curl "http://localhost:3000/api/snippets"
-
-
-Filter by language:
-
-curl "http://localhost:3000/api/snippets?lang=javascript"
-
-3️⃣ Get Snippet by ID
-curl http://localhost:3000/api/snippets/<id>
-
-4️⃣ Delete Snippet
-curl -X DELETE http://localhost:3000/api/snippets/<id>
-
-API Documentation
 POST /api/snippets
+Creates a new snippet. Requires JSON body:
 
-Create a new code snippet.
-
-Request Body
 {
   "title": "Hello World",
   "language": "python",
   "code": "print('Hello World')"
 }
 
-GET /api/snippets
-
-Retrieve all code snippets.
-
-Optional Query Parameters
-Parameter	Example	Description
-lang	?lang=javascript	Filter by programming language
-GET /api/snippets/:id
-
-Retrieve a snippet by its MongoDB _id.
 
 DELETE /api/snippets/:id
+Deletes a snippet by its _id.
 
-Delete a snippet by its _id.
+Technology Stack
 
-🗂 Project Structure
-snippet-api/
-├── server.js
-├── models/
-│   └── Snippet.js
-├── routes/
-│   └── snippetRoutes.js
-├── .env
-├── package.json
-└── README.md
+Node.js
 
-Troubleshooting
-curl hangs or CMD freezes
+Express
 
-This means MongoDB is not connected.
-Check your .env:
+MongoDB (via Mongoose)
 
-MONGO_URI=mongodb+srv://username:password@cluster0.x7p9n.mongodb.net/snippets
+JSON for API responses
 
+Project Reflection
 
-Restart:
+This project introduced me to building APIs with Node.js and Express and connecting to MongoDB Atlas.
 
-node server.js
-PowerShell JSON errors
+I learned the importance of handling JSON parsing and testing endpoints via curl/PowerShell/Postman.
 
-If you see:
+Working with .env and MongoDB connection strings highlighted the need for secure environment configuration.
 
-Unexpected token '''
+Testing revealed differences between Windows PowerShell, CMD, and macOS/Linux when sending JSON data.
 
+For further improvement, I could implement validation, error handling, and authentication.
 
-Use properly escaped JSON:
-
-"{\"title\": \"Test\"}"
+Using MongoDB Atlas instead of a local JSON file taught me how to scale data storage safely.
