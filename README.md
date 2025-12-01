@@ -1,14 +1,14 @@
-Snippet API (Project 2)
+#Snippet API (Project 2)
 Live Deployment
 
 Live:
 
-Running Locally
+##Running Locally
 Prerequisites
 
 You must have Node.js (version 18 or later) installed.
 
-Setup Instructions
+##Setup Instructions
 
 Install dependencies defined in package.json:
 
@@ -25,7 +25,7 @@ Ensure your .env is configured with:
 MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/snippets
 PORT=3000
 
-API Endpoints
+##API Endpoints
 Snippets Collection
 
 GET /api/snippets
@@ -48,17 +48,17 @@ Creates a new snippet. Requires JSON body:
 DELETE /api/snippets/:id
 Deletes a snippet by its _id.
 
-Technology Stack
+##Technology Stack
 
-Node.js
+- Node.js
 
-Express
+- Express
 
-MongoDB (via Mongoose)
+- MongoDB (via Mongoose)
 
-JSON for API responses
+- JSON for API responses
 
-Project Reflection
+##Project Reflection
 
 This project introduced me to building APIs with Node.js and Express and connecting to MongoDB Atlas.
 
