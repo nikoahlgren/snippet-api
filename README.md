@@ -1,14 +1,14 @@
 # Snippet API (Project 2)
 Live Deployment
 
-Live:
+Live: https://snippet-api-eghr.onrender.com
 
 ## Running Locally
 Prerequisites
 
 You must have Node.js (version 18 or later) installed.
 
-## Setup Instructions
+# Setup Instructions
 
 Install dependencies defined in package.json:
 
