@@ -60,14 +60,8 @@ Deletes a snippet by its _id.
 
 ## Project Reflection
 
-- This project introduced me to building APIs with Node.js and Express and connecting to MongoDB Atlas.
+- This project significantly deepened my understanding of backend development, particularly in building and deploying RESTful APIs using Node.js, Express, and MongoDB Atlas. Before starting, I had only a basic grasp of how servers handle requests, but working through each endpoint step-by-step helped me understand routing, middleware, and how data flows through an Express application. I also became more comfortable structuring a project so that routes, models, and configuration files are clearly separated and easier to maintain.
 
-- I learned the importance of handling JSON parsing and testing endpoints via curl/PowerShell/Postman.
+- A major learning experience was working with MongoDB Atlas and environment variables. Setting up a cloud-hosted database required careful handling of connection strings and taught me why environment configuration must remain secure, especially when deploying to platforms like Render. Understanding how .env files interact with the runtime environment helped me build better habits around security and secrets management.
 
-- Working with .env and MongoDB connection strings highlighted the need for secure environment configuration.
-
-- Testing revealed differences between Windows PowerShell, CMD, and macOS/Linux when sending JSON data.
-
-- For further improvement, I could implement validation, error handling, and authentication.
-
-- Using MongoDB Atlas instead of a local JSON file taught me how to scale data storage safely.
+- Another challenge involved testing API endpoints on different operating systems. I learned that Windows PowerShell, CMD, and macOS/Linux terminals each handle quoting and JSON formatting differently, which often caused subtle bugs during testing. Using tools like Postman helped standardize my workflow and made debugging easier.
