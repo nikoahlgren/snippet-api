@@ -69,8 +69,8 @@ Deletes a snippet by its _id.
 ## Video & timestamps
 video link: https://video.laurea.fi/media/t/0_3v4v6w0u
 
-00:00 - 02:10 Visual code runthrough
-02:10 - 02:57 Github repository
-02:58 - 05:20 Render.com and MongoDB showcase and troubleshoot
-05:20 - 05:45 API functionality test
+- 00:00 - 02:10 Visual code runthrough
+- 02:10 - 02:57 Github repository
+- 02:58 - 05:20 Render.com and MongoDB showcase and troubleshoot
+- 05:20 - 05:45 API functionality test
 
